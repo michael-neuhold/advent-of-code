@@ -7,4 +7,4 @@ As a side effect of this year's AOC event, I'm trying to learn a new programming
 
 ### Day 1: Sonar Sweep
 ### Day 2: Dive!
-
+### Day 3: Binary Diagnostic
