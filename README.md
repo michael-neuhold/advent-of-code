@@ -5,6 +5,8 @@ Advent of Code is an Advent calendar of small programming puzzles for a variety 
 ## Programming Language
 As a side effect of this year's AOC event, I'm trying to learn a new programming language. Therefore I will solve all tasks in Scala.
 
+## Calender
 ### Day 1: Sonar Sweep
 ### Day 2: Dive!
 ### Day 3: Binary Diagnostic
+### Day 4: Giant Squid
