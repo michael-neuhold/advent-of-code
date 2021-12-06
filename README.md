@@ -11,3 +11,4 @@ As a side effect of this year's AOC event, I'm trying to learn a new programming
 ### Day 3: Binary Diagnostic
 ### Day 4: Giant Squid
 ### Day 5: Hydrothermal Venture
+### Day 6: Lanternfish
