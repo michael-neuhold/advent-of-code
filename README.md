@@ -16,3 +16,6 @@ As a side effect of this year's AOC event, I'm trying to learn a new programming
 ### 🎅 Day 8: Seven Segment Search -> [👨‍💻](src/main/scala/day08)
 ### 🎅 Day 9: Smoke Basin -> [👨‍💻](src/main/scala/day09)
 ### 🎅 Day 10: Syntax Scoring -> [👨‍💻](src/main/scala/day10)
+
+## GitHub Actions
+Of course there is a GitHub Actions test pipeline 📈.
