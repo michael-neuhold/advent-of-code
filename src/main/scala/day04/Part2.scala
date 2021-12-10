@@ -27,15 +27,18 @@ object Part2 {
     throw new IllegalArgumentException("No solution found!");
   }
 
-  def main(args: Array[String]): Unit = {
-    val inputFile = Source.fromFile("src/main/scala/day4/input/input.txt");
+  def getResult(): Int = {
+    val inputFile = Source.fromFile("src/main/scala/day04/input/input.txt");
     val lines = inputFile.getLines().toList;
 
     val numbersToCheck = lines.head.split(',').map(ch => ch.toInt);
     val boards = getBoards(lines);
-
-    println("result: " + findLastSolution(numbersToCheck, boards));
     inputFile.close();
+    findLastSolution(numbersToCheck, boards)
+  }
+
+  def main(args: Array[String]): Unit = {
+    println("result: " + getResult());
   }
 
 }

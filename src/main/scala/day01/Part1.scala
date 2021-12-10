@@ -4,8 +4,8 @@ import scala.io.Source
 
 object Part1 {
 
-  def main(args: Array[String]): Unit = {
-    val inputFile = Source.fromFile("src/main/scala/day1/input/input.txt");
+  def getResult(): Int = {
+    val inputFile = Source.fromFile("src/main/scala/day01/input/input.txt");
     var previous = 0;
     var increases = 0;
     var isFirst = true;
@@ -18,7 +18,12 @@ object Part1 {
       isFirst = false;
       previous = currentDepth;
     }
-    print(increases + " measurements that are larger than the previous measurement")
+    increases
+  }
+
+  def main(args: Array[String]): Unit = {
+
+    print(getResult() + " measurements that are larger than the previous measurement")
   }
 
 }

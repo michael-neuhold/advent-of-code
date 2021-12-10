@@ -8,7 +8,7 @@ import scala.io.Source
 object Util {
 
   def getLinesToDraw: ListBuffer[Line] = {
-    val inputFile = Source.fromFile("src/main/scala/day5/input/input.txt");
+    val inputFile = Source.fromFile("src/main/scala/day05/input/input.txt");
     val linesToDraw = new ListBuffer[Line];
     for (line <- inputFile.getLines()) {
       val parts = line.split("->");

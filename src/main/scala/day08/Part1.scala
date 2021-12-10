@@ -4,8 +4,8 @@ import scala.io.Source
 
 object Part1 {
 
-  def main(args: Array[String]): Unit = {
-    val inputFile = Source.fromFile("src/main/scala/day8/input/input.txt");
+  def getResult(): Int = {
+    val inputFile = Source.fromFile("src/main/scala/day08/input/input.txt");
     val easyDigits = List(2,3,4,7);
     val input = inputFile
       .getLines()
@@ -16,9 +16,12 @@ object Part1 {
           lineSplit(1).split(' ').map(combination => combination.trim).toList
         )
       );
-    val result = input.map(line => line(1).count(value => easyDigits.contains(value.length))).sum;
-    println("result: " + result);
     inputFile.close();
+    input.map(line => line(1).count(value => easyDigits.contains(value.length))).sum;
+  }
+
+  def main(args: Array[String]): Unit = {
+    println("result: " + getResult());
   }
 
 }

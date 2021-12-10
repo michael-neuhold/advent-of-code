@@ -4,8 +4,7 @@ import day05.shared.Util.getLinesToDraw
 
 object Part1 {
 
-  def main(args: Array[String]): Unit = {
-
+  def getResult(): Int = {
     val linesToDraw = getLinesToDraw;
     val maxX = linesToDraw.map(line => if (line.start.x >= line.end.x) line.start.x else line.end.x).max;
     val maxY = linesToDraw.map(line => if (line.start.y >= line.end.y) line.start.y else line.end.y).max;
@@ -21,9 +20,11 @@ object Part1 {
       }
     }
 
-    val overlappingPoints = board.map(row => row.count(number => number >= 2)).sum;
-    println("result: " + overlappingPoints);
+    board.map(row => row.count(number => number >= 2)).sum;
+  }
 
+  def main(args: Array[String]): Unit = {
+    println("result: " + getResult());
   }
 
 }

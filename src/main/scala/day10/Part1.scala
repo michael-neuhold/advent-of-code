@@ -6,7 +6,7 @@ import scala.util.control.Breaks.{break, breakable}
 
 object Part1 {
 
-  def main(args: Array[String]): Unit = {
+  def getResult(): Int = {
     val inputFile = Source.fromFile("src/main/scala/day10/input/input.txt");
     val lines = inputFile.getLines().map(line => line.split("").map(str => str.head).toList)
 
@@ -34,9 +34,11 @@ object Part1 {
         }
       })
     })
+    error
+  }
 
-    println("result part 1 = " + error)
-
+  def main(args: Array[String]): Unit = {
+    println("result part 1 = " + getResult())
   }
 
 }

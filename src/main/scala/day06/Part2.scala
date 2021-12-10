@@ -7,14 +7,17 @@ import scala.io.Source
 
 object Part2 {
 
-  def main(args: Array[String]): Unit = {
-    val inputFile = Source.fromFile("src/main/scala/day6/input/input.txt");
+  def getResult(): Long = {
+    val inputFile = Source.fromFile("src/main/scala/day06/input/input.txt");
     val internalTimers = new ListBuffer[Int];
     for (line <- inputFile.getLines())
       line.split(",").map(ch => internalTimers += ch.toInt)
-
-    println("result: " + simulateLanternfish(internalTimers.toList, 256))
     inputFile.close();
+    simulateLanternfish(internalTimers.toList, 256)
+  }
+
+  def main(args: Array[String]): Unit = {
+    println("result: " + getResult())
   }
 
 }

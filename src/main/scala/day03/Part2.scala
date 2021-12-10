@@ -18,9 +18,8 @@ object Part2 {
     currentNumbers;
   }
 
-  def main(args: Array[String]): Unit = {
-
-    val inputFile = Source.fromFile("src/main/scala/day3/input/input.txt");
+  def getResult(): Int = {
+    val inputFile = Source.fromFile("src/main/scala/day03/input/input.txt");
     val numbers = inputFile.getLines().toList.map(line => line.toList);
 
     val oxygenGeneratorRating =
@@ -41,10 +40,12 @@ object Part2 {
         }
       ).head;
 
-    println("oxygenGeneratorRating: " + Integer.parseInt(oxygenGeneratorRating.mkString(""), 2));
-    println("co2ScrubberRating: " + Integer.parseInt(co2ScrubberRating.mkString(""), 2));
-    val lifeSupportRating = Integer.parseInt(oxygenGeneratorRating.mkString(""), 2) * Integer.parseInt(co2ScrubberRating.mkString(""), 2);
-    println("lifeSupportRating: " + lifeSupportRating);
     inputFile.close();
+    Integer.parseInt(oxygenGeneratorRating.mkString(""), 2) * Integer.parseInt(co2ScrubberRating.mkString(""), 2);
   }
+
+  def main(args: Array[String]): Unit = {
+    println("lifeSupportRating: " + getResult());
+  }
+
 }

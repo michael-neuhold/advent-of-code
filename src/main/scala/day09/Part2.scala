@@ -23,16 +23,20 @@ object Part2 {
     }
   }
 
-  def main(args: Array[String]): Unit = {
-    val inputFile = Source.fromFile("src/main/scala/day9/input/input.txt");
+  def getResult(): Long = {
+    val inputFile = Source.fromFile("src/main/scala/day09/input/input.txt");
     val matrix = inputFile.getLines().toList.map(line => line.split("").toList.map(ch => ch.toInt))
 
     val lowestPoints = matrix.head.indices.flatMap(xPosition => matrix.indices
       .filter(yPosition => isLowestPointInNeighborhood(matrix, xPosition, yPosition)).map(yPos => (xPosition, yPos)))
 
     val basinSizes = lowestPoints.map(pos => getBasinSizeOf(matrix, pos, Set[(Int, Int)]()));
-    println("result = " + basinSizes.map(basin => basin.size).map(i => i.toLong).sorted(Ordering[Long].reverse).take(3).product)
     inputFile.close();
+    basinSizes.map(basin => basin.size).map(i => i.toLong).sorted(Ordering[Long].reverse).take(3).product
+  }
+
+  def main(args: Array[String]): Unit = {
+    println("result = " + getResult());
   }
 
 }

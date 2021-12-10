@@ -4,8 +4,8 @@ import scala.io.Source
 
 object Part1 {
 
-  def main(args: Array[String]): Unit = {
-    val inputFile = Source.fromFile("src/main/scala/day2/input/input.txt");
+  def getResult(): Int = {
+    val inputFile = Source.fromFile("src/main/scala/day02/input/input.txt");
     val lines = inputFile.getLines().toList;
     val forward = lines.filter(line => line.contains("forward")).map(forwardCommand => forwardCommand.split(' ').last.toInt);
     val down = lines.filter(line => line.contains("down")).map(downCommand => downCommand.split(' ').last.toInt);
@@ -13,10 +13,11 @@ object Part1 {
 
     val horizontal = forward.sum;
     val vertical = down.sum - up.sum;
-    val result = horizontal * vertical;
-    println("Horizontal: " + horizontal);
-    println("Vertical: " + vertical);
-    print("Result: " + result);
+    horizontal * vertical;
+  }
+
+  def main(args: Array[String]): Unit = {
+    print("Result: " + getResult());
   }
 
 }

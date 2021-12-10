@@ -4,8 +4,8 @@ import scala.io.Source
 
 object Part2 {
 
-  def main(args: Array[String]): Unit = {
-    val inputFile = Source.fromFile("src/main/scala/day2/input/input.txt");
+  def getResult(): Int = {
+    val inputFile = Source.fromFile("src/main/scala/day02/input/input.txt");
     var aim = 0;
     var depth = 0;
     var horizontal = 0;
@@ -21,11 +21,11 @@ object Part2 {
       }
     }
 
-    val result = horizontal * depth;
-    println("Horizontal: " + horizontal);
-    println("Depth: " + depth);
-    print("Result: " + result);
+    horizontal * depth;
+  }
 
+  def main(args: Array[String]): Unit = {
+    print("Result: " + getResult());
   }
 
 }
